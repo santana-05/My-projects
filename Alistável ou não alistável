@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void main() {
+    char sexo;
+    int idade;
+    
+    printf("Por favor, insira seu sexo (*apenas uma letra) \n");
+    scanf("%c", &sexo);
+    printf("Por favor insira sua idade\n");
+    scanf("%d", &idade);
+    
+    if (sexo == 'F')
+        printf("Não alistável\n");
+    else if (idade >= 18 && idade <= 50)
+                printf("Alistável\n");
+            else printf("Não alistável\n");
+
+}
