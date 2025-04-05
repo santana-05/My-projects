@@ -1,0 +1,41 @@
+/* Um algorítmo que adiciona a idade e o sexo do animal (sem o nome)
+*/
+
+#include <stdio.h>
+#define TAM 3
+
+int main () {
+    int i, j, somaIdade, media;
+    int idade [TAM];
+    char sexo [TAM];
+
+    for (i = 0; i < TAM; i++) {
+        printf("Digite a idade:");
+        scanf("%d", &idade[i]);
+        printf("Digite o sexo:");
+        scanf("%s", &sexo[i]);
+    }
+
+    somaIdade = 0;
+
+    for (j = 0; j< TAM; j++) {
+        somaIdade += idade[j];
+    }
+    
+    media = somaIdade / TAM;
+    
+    for(i = 0; i < TAM; i++){
+        printf("%d ", idade[i]);
+        printf("%c \n", sexo[i]);
+    }
+    
+    for (j = 0; j < TAM; j++){
+        
+        if((idade[j]) >= media){
+            printf("%d ", idade[j]);
+            printf("%c \n", sexo[j]);
+               
+        }
+    }
+
+}
