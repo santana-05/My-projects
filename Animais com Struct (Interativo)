@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#define TAM 3
+
+typedef struct 
+{
+    int idade;
+    char sexo;
+    
+} Animal;
+
+int main () {
+    Animal listaAnimais[TAM];
+    
+    int sair = 0;
+    int opcao;
+    int qtd = 0;
+
+    
+    while (sair == 0) {
+        
+        printf("Opções\n");
+        printf("1 - Cadastrar\n");
+        printf("2 - Imprimir todos\n");
+        printf("3 - Imprimir com idade maior que a média\n");
+        printf("0 - Sair\n");
+        scanf("%d", &opcao);
+        
+        switch (opcao){
+            case 1:{
+                // fazendo a leitura dos dados
+                if (qtd < TAM){
+                    printf("Digite a idade:");
+                    scanf("%d", &listaAnimais[qtd].idade);
+                    getchar();
+                    printf("Digite o sexo:");
+                    scanf("%c", &listaAnimais[qtd].sexo);
+                    getchar();
+                    qtd++;
+                }else{
+                    printf("PET cheio");
+                }
+                    
+                break;
+            }
+            
+            case 2: {
+                //imprimindo todos da lista
+                printf("Todos os animais \n");
+                for (int i = 0; i < qtd; i++){
+                    printf("Idade: %d - Sexo: %c \n", listaAnimais[i].idade, listaAnimais[i].sexo);
+                }
+                break;
+            }
+            
+            case 3: {
+                //calcular a média
+                int somaIdade = 0;
+                for (int i = 0; i < qtd; i++) {
+                somaIdade += listaAnimais[i].idade;
+                }
+                int media = somaIdade/qtd;
+                
+                //imprimindo maiores que a média
+                
+                printf("Animais com idade acima da média: \n");
+                for (int i = 0; i < TAM; i++){
+                    if((listaAnimais[i].idade) >= media)
+                        printf(" Idade: %d - Sexo: %c \n", listaAnimais[i].idade, listaAnimais[i].sexo);
+                }
+                break;
+            } 
+            
+            case 0: {
+                sair = 1;
+                break;
+            } 
+            default:
+                printf("Opção inválida \n");
+            
+        }
+        
+    }
+}
