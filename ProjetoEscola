@@ -1088,7 +1088,7 @@ int main() {
 						printf("Pressione Enter para continuar...");
 						getchar();
 						break;
-					}
+					} 
 
 					while (cadastro4 != 0);
 					break;
